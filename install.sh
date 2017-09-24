@@ -17,22 +17,23 @@ brew bundle
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
-# Install Composer
-curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
+# # Install Composer
+# curl -sS https://getcomposer.org/installer | php
+# mv composer.phar /usr/local/bin/composer
 
 # Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravel/lumen-installer laravel/valet tightenco/jigsaw spatie/http-status-check bramus/mixed-content-scan laravel/spark-installer
+/usr/local/bin/composer global require laravel/installer laravel/lumen-installer laravel/valet spatie/http-status-check spatie/mixed-content-scanner-cli
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
 
-# Install global NPM packages
-npm install --global yarn
+# # Install global NPM packages
+# npm install --global yarn
 
 # Create a Sites directory
 # This is a default directory for macOS user accounts but doesn't comes pre-installed
-mkdir $HOME/Sites
+mkdir $HOME/projects
+mkdir $HOME/projects/laravel
 
 # Set macOS preferences
 # We will run this last because this will reload the shell
