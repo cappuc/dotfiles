@@ -29,40 +29,47 @@ brew 'hub'
 brew 'tree'
 brew 'mackup'
 brew 'mas'
-brew 'node'
 brew 'trash'
 brew 'wget'
 
 # Development
 brew 'php71', args: ['with-debug']
 brew 'php71-intl'
+brew 'php71-mcrypt'
 brew 'mariadb'
+brew 'sqlite'
+brew 'node'
+brew 'yarn'
+brew 'composer'
 
 # Apps
 cask 'aerial'
+cask 'adobe-photoshop-cc'
+cask 'adobe-illustrator-cc'
+cask 'adobe-acrobat-pro'
 cask 'alfred'
-cask 'caffeine'
-cask 'docker'
-cask 'dropbox'
-cask 'firefox'
+cask 'blisk'
+cask 'discord'
+cask 'gitkraken'
 cask 'google-backup-and-sync'
 cask 'google-chrome'
-cask 'gpgtools'
+cask 'imagealpha'
+cask 'imageoptim'
 cask 'iterm2'
-cask 'mysqlworkbench'
+cask 'kodi'
+cask 'microsoft-office'
+cask 'mjml'
+cask 'opera'
 cask 'phpstorm'
-cask 'quip'
+cask 'qbittorrent'
 cask 'sequel-pro'
 cask 'shuttle'
+cask 'skype'
 cask 'slack'
-cask 'sublime-text'
-cask 'torbrowser'
-cask 'tower'
-cask 'transmit'
-cask 'vagrant'
-cask 'virtualbox'
-cask 'virtualbox-extension-pack'
+cask 'telegram-desktop'
+cask 'visual-studio-code'
 cask 'vlc'
+cask 'whatsapp'
 
 # Quicklook
 cask 'qlcolorcode'
@@ -72,18 +79,14 @@ cask 'quicklook-csv'
 cask 'qlstephen'
 
 # Fonts
-cask 'font-source-code-pro-for-powerline'
-cask 'font-source-code-pro'
-cask 'font-source-sans-pro'
-cask 'font-source-serif-pro'
+cask 'font-fira-code'
+cask 'font-roboto'
+cask 'font-lato'
 
 # Install Mac App Store apps
-mas '1Password', id: 443987910
-mas 'Byword', id: 420212497
-mas 'Deckset', id: 847496013
-mas 'Gapplin', id: 768053424
-mas 'Giphy Capture', id: 668208984
-mas 'Paw', id: 584653203
-mas 'Sip', id: 507257563
-mas 'Sketch', id: 402476602
-mas 'Tweetbot', id: 557168941
+mas 'Todoist: Elenco delle attività | To-Do List', id: 585829637
+mas 'Xcode', id: 497799835
+mas 'Keynote', id: 409183694
+mas 'Pages', id: 409201541
+mas 'Numbers', id: 409203825
+mas 'The Unarchiver', id: 425424353
