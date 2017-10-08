@@ -43,9 +43,6 @@ brew 'composer'
 
 # Apps
 cask 'aerial'
-cask 'adobe-photoshop-cc'
-cask 'adobe-illustrator-cc'
-cask 'adobe-acrobat-pro'
 cask 'alfred'
 cask 'blisk'
 cask 'discord'
