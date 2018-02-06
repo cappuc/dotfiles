@@ -51,7 +51,7 @@ ZSH_CUSTOM=$DOTFILES
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-extras laravel5 composer npm yarn)
+plugins=(git git-extras laravel5 composer npm yarn docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
