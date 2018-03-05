@@ -31,6 +31,10 @@ function devw() {
   dev && cd wordpress/$1
 }
 
+function devn() {
+  dev && cd node/$1
+}
+
 #Vessel
 alias vs='./vessel'
 
