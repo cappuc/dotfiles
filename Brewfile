@@ -3,7 +3,6 @@ tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
-tap 'homebrew/php'
 
 # Install ZSH
 brew 'zsh'
@@ -22,6 +21,7 @@ brew 'bash'
 brew 'grep'
 
 # Install Binaries
+brew 'autoconf'
 brew 'awscli'
 brew 'git'
 brew 'hub'
@@ -32,10 +32,7 @@ brew 'trash'
 brew 'wget'
 
 # Development
-brew 'php71'
-brew 'php71-intl'
-brew 'php71-mcrypt'
-brew 'php71-xdebug'
+brew 'php'
 brew 'mariadb'
 brew 'sqlite'
 brew 'node'
@@ -81,6 +78,8 @@ cask 'qlstephen'
 cask 'font-fira-code'
 cask 'font-roboto'
 cask 'font-lato'
+
+pecl install xdebug
 
 # Install Mac App Store apps
 mas 'Todoist: Elenco delle attività | To-Do List', id: 585829637

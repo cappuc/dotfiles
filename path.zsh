@@ -11,7 +11,6 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="node_modules/.bin:vendor/bin:$PATH"
 
 # Make sure PHP 7.1 is loaded
-export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
 export XDEBUG_CONFIG="ideKey=VSCODE"
 
 # Make sure coreutils are loaded before system commands
