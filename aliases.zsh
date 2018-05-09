@@ -40,3 +40,10 @@ alias vs='./vessel'
 
 #Docker
 alias dneo4j='docker run --rm -p 7687:7687 -p 7474:7474 -e 'NEO4J_AUTH=none' neo4j:latest'
+
+alias nvidia_update='bash <(curl -s https://raw.githubusercontent.com/Benjamin-Dobell/nvidia-update/master/nvidia-update.sh)'
+
+function composer-link() {  
+    composer config repositories.local '{"type": "path", "url": "'$1'"}' --file composer.json
+}
+
