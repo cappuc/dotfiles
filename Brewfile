@@ -30,6 +30,7 @@ brew 'mackup'
 brew 'mas'
 brew 'trash'
 brew 'wget'
+brew install 'autoconf'
 
 # Development
 brew 'php'
@@ -79,6 +80,7 @@ cask 'font-fira-code'
 cask 'font-roboto'
 cask 'font-lato'
 
+# Php
 pecl install xdebug
 
 # Install Mac App Store apps
