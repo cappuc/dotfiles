@@ -10,6 +10,9 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 # Use project specific binaries before global ones
 export PATH="node_modules/.bin:vendor/bin:$PATH"
 
+# Python pip packages
+export PATH="$HOME/Library/Python/3.7/bin:$HOME/Library/Python/2.7/bin:$PATH"
+
 # Make sure PHP 7.1 is loaded
 export XDEBUG_CONFIG="ideKey=VSCODE"
 
