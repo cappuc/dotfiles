@@ -12,9 +12,9 @@ alias dev="cd $HOME/projects"
 
 # Laravel
 alias pa="php artisan"
-alias mw="yarn run watch"
-alias md="yarn run dev"
-alias mp="yarn run prod"
+alias yw="yarn run watch"
+alias yd="yarn run dev"
+alias yp="yarn run prod"
 
 # Composer
 unalias cgr
@@ -35,9 +35,15 @@ function devn() {
   dev && cd node/$1
 }
 
+function devgo() {
+  cd $GOPATH/src/$1
+}
+
 alias nvidia_update='bash <(curl -s https://raw.githubusercontent.com/Benjamin-Dobell/nvidia-update/master/nvidia-update.sh)'
 
 function composer-link() {  
     composer config repositories.local '{"type": "path", "url": "'$1'"}' --file composer.json
 }
 
+alias dyn="dynamodb-local -port 1337"
+alias awsdyn="aws --endpoint http://localhost:1337 dynamodb"
