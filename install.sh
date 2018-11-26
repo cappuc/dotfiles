@@ -14,6 +14,9 @@ brew update
 brew tap homebrew/bundle
 brew bundle
 
+# Php
+pecl install xdebug
+
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 

@@ -64,7 +64,7 @@ cask 'google-cloud-sdk'
 cask 'google-chrome'
 cask 'imageoptim'
 cask 'iterm2'
-cask 'java'
+cask 'java8'
 cask 'jdownloader'
 cask 'minikube'
 cask 'mjml'
@@ -90,9 +90,6 @@ cask 'qlstephen'
 cask 'font-fira-code'
 cask 'font-roboto'
 cask 'font-lato'
-
-# Php
-pecl install xdebug
 
 # Install Mac App Store apps
 mas 'Todoist: Elenco delle attività | To-Do List', id: 585829637
