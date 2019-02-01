@@ -7,6 +7,9 @@ export PATH="$(yarn global bin):$PATH"
 # Load Composer global installed binaries
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
+# Load Rust binaries
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # Use project specific binaries before global ones
 export PATH="node_modules/.bin:vendor/bin:$PATH"
 
