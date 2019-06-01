@@ -23,10 +23,10 @@ brew 'grep'
 # Install Binaries
 brew 'autoconf'
 brew 'awscli'
-brwe 'curl'
+brew 'curl'
 brew 'git'
 brew 'hub'
-brew 'kubernetes-ctl'
+brew 'kubectl'
 brew 'mackup'
 brew 'mas'
 brew 'trash'
@@ -53,23 +53,20 @@ brew 'svgo'
 # Apps
 cask 'aerial'
 cask 'alfred'
-cask 'bettertouchtool'
 cask 'discord'
 cask 'docker'
 cask 'firefox'
 cask 'gitkraken'
-cask 'goland'
 cask 'google-backup-and-sync'
 cask 'google-cloud-sdk'
 cask 'google-chrome'
 cask 'imageoptim'
 cask 'iterm2'
-cask 'java8'
+cask 'java'
 cask 'jdownloader'
 cask 'minikube'
-cask 'mjml'
 cask 'opera'
-cask 'phpstorm'
+cask 'jetbrains-toolbox'
 cask 'qbittorrent'
 cask 'sequel-pro'
 cask 'shuttle'
@@ -78,6 +75,7 @@ cask 'virtualbox'
 cask 'visual-studio-code'
 cask 'vlc'
 cask 'whatsapp'
+cask 'adobe-creative-cloud'
 
 # Quicklook
 cask 'qlcolorcode'
@@ -85,6 +83,8 @@ cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
 cask 'qlstephen'
+cask 'qlimagesize'
+cask 'qlvideo'
 
 # Fonts
 cask 'font-fira-code'
@@ -93,7 +93,7 @@ cask 'font-lato'
 
 # Install Mac App Store apps
 mas 'Todoist: Elenco delle attività | To-Do List', id: 585829637
-mas 'Xcode', id: 497799835
+# mas 'Xcode', id: 497799835
 mas 'Keynote', id: 409183694
 mas 'Pages', id: 409201541
 mas 'Numbers', id: 409203825
