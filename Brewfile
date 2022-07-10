@@ -1,46 +1,53 @@
 # Taps
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
+tap 'nicoverbruggen/homebrew-cask'
 
-# Install ZSH
-brew 'zsh'
-brew 'zsh-completions'
-
-# Install GNU core utilities (those that come with macOS are outdated)
-brew 'coreutils'
-
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-brew 'findutils'
-
-# Install Bash 4
-brew 'bash'
-
-# Install more recent versions of some macOS tools
-brew 'grep'
-
-# Install Binaries
-brew 'autoconf'
+# Binaries
 brew 'awscli'
+brew 'bash' # Latest Bash version
+brew 'bat' # Used for spatie/visit
+brew 'coreutils' # Those that come with macOS are outdated
 brew 'curl'
+brew 'findutils'
+brew 'ffmpeg'
+brew 'gh'
 brew 'git'
-brew 'hub'
+brew 'gnupg'
+brew 'grep'
+brew 'grpc'
+brew 'helm'
+brew 'htop'
+brew 'httpie'
+brew 'jq' # Used for spatie/visit
+brew 'kops'
 brew 'kubectl'
+brew 'kubectx'
+brew 'linkerd'
 brew 'mackup'
-brew 'mas'
-brew 'trash'
-brew 'tree'
+brew 'mas' # Mac App Store manager
+brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
+brew 'rclone'
+brew 'svn' # Needed to install fonts
+brew 'terraform'
 brew 'wget'
+brew 'yq'
 
 # Development
 brew 'composer'
 brew 'go'
-brew 'mysql@5.7'
+brew 'imagemagick'
+brew 'meilisearch'
+brew 'mysql'
+brew 'nginx'
 brew 'node'
 brew 'php'
+brew 'php@8.0'
+brew 'php@7.4'
+brew 'pnpm'
 brew 'redis'
-brew 'sqlite'
 brew 'yarn'
 
 # Image tools
@@ -51,31 +58,36 @@ brew 'pngquant'
 brew 'svgo'
 
 # Apps
+cask 'adobe-creative-cloud'
 cask 'aerial'
-cask 'alfred'
+cask 'dbngin'
 cask 'discord'
 cask 'docker'
 cask 'firefox'
-cask 'gitkraken'
-cask 'google-backup-and-sync'
-cask 'google-cloud-sdk'
+cask 'fork'
+cask 'github'
 cask 'google-chrome'
+cask 'google-drive'
+cask 'gpg-suite'
 cask 'imageoptim'
+cask 'insomnia'
 cask 'iterm2'
-cask 'java'
-cask 'jdownloader'
-cask 'minikube'
-cask 'opera'
 cask 'jetbrains-toolbox'
+# cask 'pastebot'
+cask 'phpmon'
+cask 'nordpass'
 cask 'qbittorrent'
-cask 'sequel-pro'
-cask 'shuttle'
+cask 'ray'
+cask 'sequel-ace'
+# cask 'slack'
+cask 'surfshark'
+cask 'tableplus'
 cask 'telegram-desktop'
-cask 'virtualbox'
+cask 'the-unarchiver'
+# cask 'tinkerwell'
 cask 'visual-studio-code'
-cask 'vlc'
 cask 'whatsapp'
-cask 'adobe-creative-cloud'
+cask 'zoom'
 
 # Quicklook
 cask 'qlcolorcode'
@@ -87,14 +99,16 @@ cask 'qlimagesize'
 cask 'qlvideo'
 
 # Fonts
-cask 'font-fira-code'
-cask 'font-roboto'
 cask 'font-lato'
+cask 'font-jetbrains-mono'
+cask 'font-open-sans'
+cask 'font-roboto'
+cask 'font-source-code-pro-for-powerline'
+cask 'font-source-code-pro'
+cask 'font-source-sans-pro'
+cask 'font-source-serif-pro'
 
-# Install Mac App Store apps
-mas 'Todoist: Elenco delle attività | To-Do List', id: 585829637
-# mas 'Xcode', id: 497799835
+# Mac App Store
 mas 'Keynote', id: 409183694
-mas 'Pages', id: 409201541
 mas 'Numbers', id: 409203825
-mas 'The Unarchiver', id: 425424353
+mas 'Pages', id: 409203825
