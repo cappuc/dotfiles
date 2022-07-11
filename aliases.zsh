@@ -21,7 +21,7 @@ alias serve="php artisan serve"
 # PHP
 unalias cgr
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
-alias composer="php -d memory_limit=-1 /opt/homebrew/bin/composer"
+alias composer="php -d memory_limit=-1 /usr/local/bin/composer"
 function composer-link() {
     composer config repositories.${2:-local} path "$1"
 }

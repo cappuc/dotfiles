@@ -44,6 +44,9 @@ $HOME/.composer/vendor/bin/global-ray install
 # Create a projects directory
 mkdir $HOME/projects
 
+# Create a scripts directory
+mkdir $HOME/.scripts
+
 # Symlink the Mackup config file to the home directory
 ln -s $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
 
