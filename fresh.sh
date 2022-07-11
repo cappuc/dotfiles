@@ -2,8 +2,10 @@
 
 echo "Setting up your Mac..."
 
+DOTFILES=$HOME/.dotfiles
+
 # Check for Oh My Zsh and install if we don't have it
-if test ! $(which omz); then
+if [-d $HOME/.oh-my-zsh] then
   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 fi
 
@@ -17,7 +19,12 @@ fi
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
+ln -s $DOTFILES/.zshrc $HOME/.zshrc
+
+# Install rosetta 2
+if [[ $(uname -m) == 'arm64' ]]; then
+  sudo softwareupdate --install-rosetta
+fi
 
 # Update Homebrew recipes
 brew update
@@ -29,11 +36,14 @@ brew bundle --file $DOTFILES/Brewfile
 # Set default MySQL root password and auth type
 # mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
 
+# Fix required library for pecl extensions
+ln -s /opt/homebrew/Cellar/pcre2/$(brew info --json pcre2 | jq '.[0].installed[0].version')/include/pcre2.h /opt/homebrew/Cellar/php/$(brew info --json php | jq '.[0].installed[0].version')/include/php/ext/pcre/pcre2.h
+ 
 # Install PHP extensions with PECL
 pecl install imagick redis grpc protobuf
 
 # Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravel/valet beyondcode/expose spatie/global-ray spatie/visit
+/opt/homebrew/bin/composer global require laravel/installer laravel/valet beyondcode/expose spatie/global-ray spatie/visit
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
