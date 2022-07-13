@@ -23,6 +23,9 @@ export PATH="$HOME/Library/Python/3.7/bin:$HOME/Library/Python/2.7/bin:$PATH"
 # Load Apollo rover cli
 export PATH="$HOME/.rover/bin:$PATH"
 
+# Load Jetbrains scripts
+export PATH="$HOME/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
+
 # Use project specific binaries before global ones
 export PATH="node_modules/.bin:vendor/bin:$PATH"
 

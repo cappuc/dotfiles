@@ -10,6 +10,7 @@ tap 'nicoverbruggen/homebrew-cask'
 brew 'awscli'
 brew 'bash' # Latest Bash version
 brew 'bat' # Used for spatie/visit
+brew 'bind' 
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'curl'
 brew 'findutils'
@@ -34,6 +35,7 @@ brew 'nss' # required by mkcert for firefox
 brew 'pcre2'
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'rclone'
+brew 'rover'
 brew 'svn' # Needed to install fonts
 brew 'terraform'
 brew 'wget'
