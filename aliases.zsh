@@ -15,12 +15,12 @@ alias devgo="cd $GOPATH/src"
 alias pa="php artisan"
 alias fresh="php artisan migrate:fresh --seed"
 alias tinker="php artisan tinker"
-alias seed="php artisan db:seed"
-alias serve="php artisan serve"
+# alias seed="php artisan db:seed"
+# alias serve="php artisan serve"
 
 # PHP
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
-alias composer="php -d memory_limit=-1 /opt/homebrew/bin/composer"
+# alias composer="php -d memory_limit=-1 /opt/homebrew/bin/composer"
 alias fixpcre2="ln -s /opt/homebrew/Cellar/pcre2/$(brew info --json pcre2 | jq '.[0].installed[0].version')/include/pcre2.h /opt/homebrew/Cellar/php/$(brew info --json php | jq '.[0].installed[0].version')/include/php/ext/pcre/pcre2.h"
 function composer-link() {
     composer config repositories.${2:-local} path "$1"

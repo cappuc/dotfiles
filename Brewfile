@@ -10,7 +10,7 @@ tap 'nicoverbruggen/homebrew-cask'
 brew 'awscli'
 brew 'bash' # Latest Bash version
 brew 'bat' # Used for spatie/visit
-brew 'bind' 
+brew 'bind'
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'curl'
 brew 'findutils'
@@ -50,8 +50,7 @@ brew 'mysql'
 brew 'nginx'
 brew 'node'
 brew 'php'
-brew 'php@8.0'
-brew 'php@7.4'
+brew 'phive'
 brew 'pnpm'
 brew 'redis'
 brew 'yarn'

@@ -116,3 +116,11 @@ export LANG=it_IT.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# pnpm
+export PNPM_HOME="/Users/fabio/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+# bun completions
+[ -s "/Users/fabio/.bun/_bun" ] && source "/Users/fabio/.bun/_bun"

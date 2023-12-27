@@ -43,7 +43,7 @@ ln -s /opt/homebrew/Cellar/pcre2/$(brew info --json pcre2 | jq '.[0].installed[0
 pecl install imagick redis grpc protobuf
 
 # Install global Composer packages
-/opt/homebrew/bin/composer global require laravel/installer laravel/valet beyondcode/expose spatie/global-ray spatie/visit
+/opt/homebrew/bin/composer global require laravel/installer laravel/valet beyondcode/expose spatie/global-ray spatie/visit tightenco/takeout
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
