@@ -2,7 +2,7 @@
 export PATH="$DOTFILES/bin:$PATH"
 
 # Load Composer tools
-export PATH="$HOME/.composer/vendor/bin:$HOME/tools/:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # Load Node global installed binaries
 export PATH="$HOME/.node/bin:$PATH"
@@ -31,7 +31,7 @@ if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
 fi
 
 # Load home binaries
-export PATH=$HOME/bin:$HOME/.config/phpmon/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:$HOME/.config/phpmon/bin:$HOME/.pub-cache/bin:$PATH
 
 # Load Apollo rover cli
 export PATH="$HOME/.rover/bin:$PATH"
