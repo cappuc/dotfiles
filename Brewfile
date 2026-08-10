@@ -131,16 +131,17 @@ brew 'postgresql@18'
 brew 'redis'
 
 # Cloud & Kubernetes
-cask 'docker-desktop'
+# cask 'docker-desktop'
+cask 'orbstack'
 cask 'freelens'
 cask 'gcloud-cli'
 brew 'awscli'
-brew 'hashicorp/tap/terraform'
 brew 'helm'
 brew 'k9s'
 brew 'krew'
 brew 'kubectx'
 brew 'kubent'
+brew 'hashicorp/tap/terraform'
 brew 'opentofu'
 
 # Platform CLIs
