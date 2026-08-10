@@ -8,6 +8,17 @@ setopt auto_cd auto_pushd pushd_ignore_dups
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
+# Up/Down walk only the history entries starting with what's already typed.
+# Both escape sequences are bound: ^[[A is the normal one, ^[OA is what some
+# terminals send in application mode.
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
+bindkey '^[OA' up-line-or-beginning-search
+bindkey '^[OB' down-line-or-beginning-search
+
 # Load dotfiles config. Order matters: path.zsh exports vars the aliases use.
 source $DOTFILES/path.zsh
 source $DOTFILES/history.zsh
