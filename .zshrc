@@ -39,10 +39,7 @@ fi
 # Personal aliases live in $DOTFILES/aliases.zsh (sourced above).
 # For a full list of active aliases, run `alias`.
 
-# pnpm
-export PNPM_HOME="/Users/fabio/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+# pnpm: PNPM_HOME lives in path.zsh
 
 # Java/Android
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
@@ -74,8 +71,14 @@ eval "$(starship init zsh)"
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/fabio/.docker/completions $fpath)
+# Full compinit (with its security scan + cache rebuild) costs ~230ms, so run it
+# only once a day; every other start reuses the dump via -C for ~10ms.
 autoload -Uz compinit
-compinit
+if [[ -n $HOME/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 # End of Docker CLI completions
 
 # Fish-like suggestions from history (→ or End to accept). Must load after compinit.
