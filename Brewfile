@@ -15,6 +15,7 @@ tap 'yvgude/lean-ctx' # lean-ctx
 cask 'ghostty'
 brew 'shfmt'
 brew 'starship'
+brew 'zsh-autosuggestions'
 
 # CLI essentials
 brew 'bat'

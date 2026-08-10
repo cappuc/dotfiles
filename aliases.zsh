@@ -7,10 +7,12 @@ alias c="clear"
 alias takeout="docker run --rm -v //var/run/docker.sock:/var/run/docker.sock --add-host=host.docker.internal:host-gateway -it tighten/takeout:latest"
 
 # Directories
+alias ..='cd ..'
+alias ...='cd ../..'
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 alias dev="cd $HOME/projects"
-alias devgo="cd $GOPATH/src"
+alias devgo='cd $GOPATH/src'
 
 # Laravel
 alias pa="php artisan"
