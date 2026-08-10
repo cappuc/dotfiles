@@ -5,8 +5,11 @@ typeset -U path PATH
 # Load dotfiles binaries
 # export PATH="$DOTFILES/bin:$PATH"
 
-# Load Composer tools
-export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+# Load Composer tools. COMPOSER_HOME is pinned explicitly because Composer falls
+# back to the legacy ~/.composer whenever that directory happens to exist.
+# mackup/composer.cfg syncs this same XDG path.
+export COMPOSER_HOME="$HOME/.config/composer"
+export PATH="$COMPOSER_HOME/vendor/bin:$PATH"
 
 # Set pnpm global store
 export PNPM_HOME="$HOME/Library/pnpm"

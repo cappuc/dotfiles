@@ -40,17 +40,18 @@ if ! command -v composer > /dev/null; then
   rm composer-setup.php
 fi
 
-# Install global Composer packages
-composer global require laravel/valet beyondcode/expose spatie/global-ray spatie/visit tightenco/takeout
+# Pin Composer's home: it would otherwise fall back to the legacy ~/.composer
+# if that directory exists. Matches path.zsh and mackup/composer.cfg.
+export COMPOSER_HOME=$HOME/.config/composer
 
-# Composer's home differs between machines (~/.composer vs ~/.config/composer)
-COMPOSER_BIN="$(composer config --global home)/vendor/bin"
+# Install global Composer packages
+composer global require laravel/valet beyondcode/expose spatie/global-ray spatie/visit
 
 # Install Laravel Valet
-$COMPOSER_BIN/valet install
+$COMPOSER_HOME/vendor/bin/valet install
 
 # Install Global Ray
-$COMPOSER_BIN/global-ray install
+$COMPOSER_HOME/vendor/bin/global-ray install
 
 # Create a projects directory
 mkdir -p $HOME/projects
@@ -60,6 +61,10 @@ mkdir -p $HOME/.scripts
 
 # Symlink the Mackup config file to the home directory
 ln -sf $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
+
+# Custom Mackup app definitions (override the bundled ones with the same name)
+mkdir -p $HOME/.mackup
+ln -sf $DOTFILES/mackup/composer.cfg $HOME/.mackup/composer.cfg
 
 # Set macOS preferences - we will run this last because this will reload the shell
 source $DOTFILES/.macos
