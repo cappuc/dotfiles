@@ -62,9 +62,9 @@ mkdir -p $HOME/.scripts
 # Symlink the Mackup config file to the home directory
 ln -sf $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
 
-# Custom Mackup app definitions (override the bundled ones with the same name)
+# Custom Mackup app definitions (a cfg here overrides a bundled one of the same name)
 mkdir -p $HOME/.mackup
-ln -sf $DOTFILES/mackup/composer.cfg $HOME/.mackup/composer.cfg
+ln -sf $DOTFILES/mackup/*.cfg $HOME/.mackup/
 
 # Set macOS preferences - we will run this last because this will reload the shell
 source $DOTFILES/.macos
