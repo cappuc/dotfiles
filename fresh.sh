@@ -5,7 +5,7 @@ echo "Setting up your Mac..."
 DOTFILES=$HOME/.dotfiles
 
 # Check for Homebrew and install if we don't have it
-if test ! $(which brew); then
+if ! command -v brew > /dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
@@ -16,44 +16,50 @@ fi
 rm -rf $HOME/.zshrc
 ln -s $DOTFILES/.zshrc $HOME/.zshrc
 
-# Install rosetta 2
-if [[ $(uname -m) == 'arm64' ]]; then
-  sudo softwareupdate --install-rosetta
-fi
+# Global gitignore
+ln -sf $DOTFILES/.gitignore_global $HOME/.gitignore
+git config --global core.excludesfile $HOME/.gitignore
 
 # Update Homebrew recipes
 brew update
 
 # Install all our dependencies with bundle (See Brewfile)
-brew tap homebrew/bundle
-brew bundle --file $DOTFILES/Brewfile
+brew bundle install --file $DOTFILES/Brewfile
 
 # Set default MySQL root password and auth type
 # mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
 
 # Fix required library for pecl extensions
-ln -s /opt/homebrew/Cellar/pcre2/$(brew info --json pcre2 | jq '.[0].installed[0].version')/include/pcre2.h /opt/homebrew/Cellar/php/$(brew info --json php | jq '.[0].installed[0].version')/include/php/ext/pcre/pcre2.h
- 
-# Install PHP extensions with PECL
-pecl install imagick redis grpc protobuf
+# ln -s /opt/homebrew/Cellar/pcre2/$(brew info --json pcre2 | jq '.[0].installed[0].version')/include/pcre2.h /opt/homebrew/Cellar/php/$(brew info --json php | jq '.[0].installed[0].version')/include/php/ext/pcre/pcre2.h
+
+# Install Composer (official installer, https://getcomposer.org/download/)
+if ! command -v composer > /dev/null; then
+  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  sudo mkdir -p /usr/local/bin
+  sudo php composer-setup.php --quiet --install-dir=/usr/local/bin --filename=composer
+  rm composer-setup.php
+fi
 
 # Install global Composer packages
-/opt/homebrew/bin/composer global require laravel/installer laravel/valet beyondcode/expose spatie/global-ray spatie/visit tightenco/takeout
+composer global require laravel/valet beyondcode/expose spatie/global-ray spatie/visit tightenco/takeout
+
+# Composer's home differs between machines (~/.composer vs ~/.config/composer)
+COMPOSER_BIN="$(composer config --global home)/vendor/bin"
 
 # Install Laravel Valet
-$HOME/.composer/vendor/bin/valet install
+$COMPOSER_BIN/valet install
 
 # Install Global Ray
-$HOME/.composer/vendor/bin/global-ray install
+$COMPOSER_BIN/global-ray install
 
 # Create a projects directory
-mkdir $HOME/projects
+mkdir -p $HOME/projects
 
 # Create a scripts directory
-mkdir $HOME/.scripts
+mkdir -p $HOME/.scripts
 
 # Symlink the Mackup config file to the home directory
-ln -s $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
+ln -sf $DOTFILES/.mackup.cfg $HOME/.mackup.cfg
 
 # Set macOS preferences - we will run this last because this will reload the shell
 source $DOTFILES/.macos
