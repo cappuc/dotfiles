@@ -1,15 +1,13 @@
 # Taps
-tap 'anomalyco/tap' # opencode
-tap 'hashicorp/tap' # terraform
-tap 'homebrew/cask'
-tap 'homebrew/core'
-tap 'nicoverbruggen/homebrew-cask' # phpmon
-tap 'shivammathur/extensions' # php extensions
-tap 'shivammathur/php' # php
-tap 'stass/tap' # blew
-tap 'steipete/tap' # codexbar
-tap 'stripe/stripe-cli' # stripe
-tap 'yvgude/lean-ctx' # lean-ctx
+tap 'anomalyco/tap', trusted: true # opencode
+tap 'hashicorp/tap', trusted: true # terraform
+tap 'nicoverbruggen/homebrew-cask', trusted: true # phpmon
+tap 'shivammathur/extensions', trusted: true # php extensions
+tap 'shivammathur/php', trusted: true # php
+tap 'stass/tap', trusted: true # blew
+tap 'steipete/tap', trusted: true # codexbar
+tap 'stripe/stripe-cli', trusted: true # stripe
+tap 'yvgude/lean-ctx', trusted: true # lean-ctx
 
 # Shell & terminal
 cask 'ghostty'
