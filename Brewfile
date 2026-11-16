@@ -8,7 +8,6 @@ tap 'shivammathur/php', trusted: true # php
 tap 'stass/tap', trusted: true # blew
 tap 'steipete/tap', trusted: true # codexbar
 tap 'stripe/stripe-cli', trusted: true # stripe
-tap 'yvgude/lean-ctx', trusted: true # lean-ctx
 
 # Shell & terminal
 cask 'ghostty'
@@ -163,7 +162,6 @@ cask 't3-code'
 brew 'anomalyco/tap/opencode'
 cask 'opencode-desktop'
 brew 'pi-coding-agent'
-brew 'yvgude/lean-ctx/lean-ctx'
 
 # Media
 cask 'handbrake-app'
