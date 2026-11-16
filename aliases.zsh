@@ -57,3 +57,11 @@ function vnc-tunnel() {
   echo "Opening vnc tunnel on localhost:5900"
   ssh -t -L 5900:$2:5900 -N $1
 }
+function rds-tunnel() {
+  local id=$(aws ec2 describe-instances --region eu-central-1 \
+    --filters "Name=tag:kops.k8s.io/instancegroup,Values=master-eu-central-1a" "Name=instance-state-name,Values=running" \
+    --query 'Reservations[0].Instances[0].InstanceId' --output text)
+  aws ssm start-session --region eu-central-1 --target "$id" \
+    --document-name AWS-StartPortForwardingSessionToRemoteHost \
+    --parameters "host=k8s-1-db.ccktvwmqlqww.eu-central-1.rds.amazonaws.com,portNumber=3306,localPortNumber=13306"
+}
