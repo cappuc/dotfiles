@@ -28,9 +28,9 @@ export PATH="$GOPATH/bin:$PATH"
 # Load ruby from homebrew
 if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-  # Gem dir is hardcoded on purpose: `gem environment gemdir` costs ~80ms at
-  # every shell start. Update this after a major Ruby upgrade (3.3.0 -> x.y.z).
-  export PATH="/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH"
+  # Newest gem dir first. Glob (numeric sort, reversed) is free; calling
+  # `gem environment gemdir` costs ~80ms at every shell start.
+  path=(/opt/homebrew/lib/ruby/gems/*/bin(Non) $path)
 fi
 
 # Load home binaries
