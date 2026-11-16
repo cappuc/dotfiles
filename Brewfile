@@ -2,6 +2,7 @@
 tap 'anomalyco/tap', trusted: true # opencode
 tap 'hashicorp/tap', trusted: true # terraform
 tap 'nicoverbruggen/homebrew-cask', trusted: true # phpmon
+tap 'nubjs/tap', trusted: true # nub
 tap 'shivammathur/extensions', trusted: true # php extensions
 tap 'shivammathur/php', trusted: true # php
 tap 'stass/tap', trusted: true # blew
@@ -83,9 +84,10 @@ brew 'watchman'
 
 # Languages & runtimes
 # cask 'temurin'
-# cask 'zulu@17'
-brew 'asdf'
+cask 'zulu@17'
 brew 'corepack'
+brew 'mise'
+brew 'nubjs/tap/nub'
 brew 'go'
 brew 'node@24'
 brew 'pipx'

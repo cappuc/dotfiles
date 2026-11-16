@@ -12,8 +12,9 @@ if ! command -v brew > /dev/null; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
-rm -rf $HOME/.zshrc
+# Removes shell config files from $HOME (if they exist) and symlinks them from the .dotfiles
+rm -rf $HOME/.zshenv $HOME/.zshrc
+ln -s $DOTFILES/.zshenv $HOME/.zshenv
 ln -s $DOTFILES/.zshrc $HOME/.zshrc
 
 # Global gitignore

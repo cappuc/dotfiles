@@ -1,5 +1,5 @@
-# Path to your dotfiles.
-export DOTFILES=$HOME/.dotfiles
+# macOS /etc/zprofile (path_helper) reorders PATH after .zshenv in login shells.
+source $HOME/.zshenv
 
 # Directory navigation
 setopt auto_cd auto_pushd pushd_ignore_dups
@@ -19,8 +19,7 @@ bindkey '^[[B' down-line-or-beginning-search
 bindkey '^[OA' up-line-or-beginning-search
 bindkey '^[OB' down-line-or-beginning-search
 
-# Load dotfiles config. Order matters: path.zsh exports vars the aliases use.
-source $DOTFILES/path.zsh
+# Load interactive dotfiles config.
 source $DOTFILES/history.zsh
 source $DOTFILES/aliases.zsh
 
@@ -74,9 +73,6 @@ export GST_PLUGIN_PATH="/opt/homebrew/opt/aravis/lib/gstreamer-1.0:${GST_PLUGIN_
 
 # bun completions
 [ -s "/Users/fabio/.bun/_bun" ] && source "/Users/fabio/.bun/_bun"
-
-# asdf
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 eval "$(starship init zsh)"
 
